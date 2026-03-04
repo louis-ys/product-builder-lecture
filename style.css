@@ -1,44 +1,104 @@
 :root {
   /* Light Theme Variables */
-  --bg-color: #ffffff;
-  --text-color: #333333;
-  --btn-bg: #eeeeee;
-  --btn-text: #000000;
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #ced4da;
+  --btn-bg: #007bff;
+  --btn-text: #ffffff;
   --transition-speed: 0.3s;
 }
 
 [data-theme="dark"] {
   /* Dark Theme Variables */
-  --bg-color: #1a1a1a;
-  --text-color: #f0f0f0;
-  --btn-bg: #333333;
+  --bg-color: #121212;
+  --text-color: #e9ecef;
+  --card-bg: #1e1e1e;
+  --input-bg: #2b2b2b;
+  --input-border: #444444;
+  --btn-bg: #375a7f;
   --btn-text: #ffffff;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color var(--transition-speed), color var(--transition-speed);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   margin: 0;
+  padding-top: 80px;
 }
 
-button {
+h1 { margin-bottom: 10px; }
+p { margin-bottom: 30px; color: #6c757d; }
+
+.contact-section {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px;
+  transition: background-color var(--transition-speed);
+}
+
+.contact-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  font-family: inherit;
+}
+
+.submit-btn {
+  width: 100%;
   background-color: var(--btn-bg);
   color: var(--btn-text);
-  border: 1px solid #ccc;
-  padding: 10px 20px;
-  border-radius: 8px;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color var(--transition-speed), color var(--transition-speed);
+  transition: opacity 0.2s;
 }
 
-button:hover {
-  opacity: 0.8;
+.submit-btn:hover {
+  opacity: 0.9;
 }
 
+#theme-toggle {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
